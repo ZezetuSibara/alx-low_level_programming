@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - check the code
+ * Return: 0 (Successful)
+ */
+
 int main(void)
 {
 	int n;
