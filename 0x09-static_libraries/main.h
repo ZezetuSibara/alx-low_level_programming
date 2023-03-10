@@ -9,6 +9,7 @@ int _abs(int n);
 int _isupper(int c);
 int _isdigit(int c);
 int _strlen(char *s);
+int main(void);
 void _puts(char *s);
 void _puts(char *str);
 char *_strcpy(char *dest, char *src);
