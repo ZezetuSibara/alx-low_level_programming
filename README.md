@@ -1,104 +1,86 @@
-C - argc, argv
-		
+C - Function pointers
 
-		
 TASKS
-		
 
-		
-[0. It ain't what they call you, it's what you answer to](0-whatsmyname.c)
-		
+0. What's my name
+Write a function that prints a name.
+Prototype: void print_name(char *name, void (*f)(char *));
 
-		
-Write a program that prints its name, followed by a new line.
-		
+1. If you spend too much time thinking about a thing, you'll never get it done
+Write a function that executes a function given as a parameter on each element of an array.
+Prototype: void array_iterator(int *array, size_t size, void (*action)(int));
+where size is the size of the array and action is a pointer to the function you need to use.
 
-		
-If you rename the program, it will print the new name, without having to compile it again
-		
-You should not remove the path before the name of the program
-		
+2. To hell with circumstances; I create opportunities
+Write a function that searches for an integer.
+Prototype: int int_index(int *array, int size, int (*cmp)(int));
+where size is the number of elements in the array array
+cmp is a pointer to the function to be used to compare values
+int_index returns the index of the first element for which the cmp function does not return 0
+If no element matches, return -1
+If size <= 0, return -1
 
-		
-[1. Silence is argument carried out by other means](1-args.c)
-		
+3. A goal is not always meant to be reached, it often serves simply as something to aim at
+Write a program that performs simple operations.
+You are allowed to use the standard library
+Usage: calc num1 operator num2
+You can assume num1 and num2 are integers, so use the atoi function to convert them from the string input to int
+operator is one of the following:
++: addition
+-: subtraction
+*: multiplication
+/: division
+%: modulo
+The program prints the result of the operation, followed by a new line
+You can assume that the result of all operations can be stored in an int
+if the number of arguments is wrong, print Error, followed by a new line, and exit with the status 98
+if the operator is none of the above, print Error, followed by a new line, and exit with the status 99
+if the user tries to divide (/ or %) by 0, print Error, followed by a new line, and exit with the status 100
+This task requires that you create four different files.
 
-		
-Write a program that prints the number of arguments passed into it.
-		
+3-calc.h
+This file should contain all the function prototypes and data structures used by the program. You can use this structure:
 
-		
-Your program should print a number, followed by a new line
-		
+3-op_functions.c
+This file should contain the 5 following functions (not more):
+op_add: returns the sum of a and b. Prototype: int op_add(int a, int b);
+op_sub: returns the difference of a and b. Prototype: int op_sub(int a, int b);
+op_mul: returns the product of a and b. Prototype: int op_mul(int a, int b);
+op_div: returns the result of the division of a by b. Prototype: int op_div(int a, int b);
+op_mod: returns the remainder of the division of a by b. Prototype: int op_mod(int a, int b);
 
-		
+3-get_op_func.c
+This file should contain the function that selects the correct function to perform the operation asked by the user. You’re not allowed to declare any other function.
+Prototype: int (*get_op_func(char *s))(int, int);
+where s is the operator passed as argument to the program
+This function returns a pointer to the function that corresponds to the operator given as a parameter. Example: get_op_func("+") should return a pointer to the function op_add
+You are not allowed to use switch statements
+You are not allowed to use for or do ... while loops
+You are not allowed to use goto
+You are not allowed to use else
+You are not allowed to use more than one if statement in your code
+You are not allowed to use more than one while loop in your code
+If s does not match any of the 5 expected operators (+, -, *, /, %), return NULL
+You are only allowed to declare these two variables in this function:
 
-		
-[2. The best argument against democracy is a five-minute conversation with the average voter](2-args.c)
-		
+3-main.c
+This file should contain your main function only.
+You are not allowed to code any other function than main in this file
+You are not allowed to directly call op_add, op_sub, op_mul, op_div or op_mod from the main function
+You have to use atoi to convert arguments to int
+You are not allowed to use any kind of loop -
+You are allowed to use a maximum of 3 if statements
 
-		
-Write a program that prints all arguments it receives.
-		
-
-		
-All arguments should be printed, including the first one
-		
-Only print one argument per line, ending with a new line
-		
-
-		
-[3. Neither irony nor sarcasm is argument](3-mul.c)
-		
-
-		
-Write a program that multiplies two numbers.
-		
-
-		
-Your program should print the result of the multiplication, followed by a new line
-		
-You can assume that the two numbers and result of the multiplication can be stored in an integer
-		
-If the program does not receive two arguments, your program should print Error, followed by a new line, and return 1
-		
-
-		
-[4. To infinity and beyond](4-add.c)
-		
-
-		
-Write a program that adds positive numbers.
-		
-
-		
-Print the result, followed by a new line
-		
-If no number is passed to the program, print 0, followed by a new line
-		
-If one of the number contains symbols that are not digits, print Error, followed by a new line, and return 1
-		
-You can assume that numbers and the addition of all the numbers can be stored in an int
-		
-
-		
-[5. Minimal Number of Coins for Change](100-change.c)
-		
-
-		
-Write a program that prints the minimum number of coins to make change for an amount of money.
-		
-
-		
-Usage: ./change cents
-		
-where cents is the amount of cents you need to give back
-		
-if the number of arguments passed to your program is not exactly 1, print Error, followed by a new line, and return 1
-		
-you should use atoi to parse the parameter passed to your program
-		
-If the number passed as the argument is negative, print 0, followed by a new line
-		
-You can use an unlimited number of coins of values 25, 10, 5, 2, and 1 cent
-
+4. Most hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker
+Write a program that prints the opcodes of its own main function.
+Usage: ./main number_of_bytes
+Output format:
+the opcodes should be printed in hexadecimal, lowercase
+each opcode is two char long
+listing ends with a new line
+see example
+You are allowed to use printf and atoi
+You have to use atoi to convert the argument to an int
+If the number of argument is not the correct one, print Error, followed by a new line, and exit with the status 1
+If the number of bytes is negative, print Error, followed by a new line, and exit with the status 2
+You do not have to compile with any flags
