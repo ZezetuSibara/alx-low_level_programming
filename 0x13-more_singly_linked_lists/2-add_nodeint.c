@@ -3,10 +3,10 @@
 /**
  * add_nodeint - helps to adds a new node
  * @head: position of the first node
- * @n: integer to insert in that new node
+ * @y: integer to insert in that new node
  * Return: pointer to new node, or NULL should it fail
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint(listint_t **head, const int y)
 {
 	listint_t *new;
 
@@ -15,7 +15,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	if (!new)
 		return (NULL);
 
-	new->n = y;
+	new->y = y;
 	new->next = *head;
 	*head = new;
 
