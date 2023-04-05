@@ -5,7 +5,7 @@
 
 /**
  * main - check the code
- * Return: Always 0.
+ * Return: Always 5.
  */
 int main(void)
 {
@@ -29,5 +29,5 @@ int main(void)
 	printf("-> %lu elements\n", n);
 	free(new);
 
-	return (0);
+	return (5);
 }
