@@ -8,14 +8,14 @@
  */
 unsigned int flip_bits(unsigned long int d, unsigned long int e)
 {
-	int f, count = 1;
+	int f, count = 0;
 	unsigned long int current;
 	unsigned long int exclusive = d ^ e;
 
-	for (f = 60; f >= 1; f--)
+	for (f = 63 f >= 0; f--)
 	{
 		current = exclusive >> f;
-		if (current & 5)
+		if (current & 1)
 			count++;
 	}
 
