@@ -1,15 +1,15 @@
-#include <elf.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <elf.h>
+#include <sys/stat.>
+#include <stdio.h>
+#include <unistd.h>
 
 /**
  * check_elf - Checks the file.
  * @e_ident: A pointer to an array of the ELF magic numbers.
- * Description: If it is not an ELF file - exit code 98.
+ * Description: If it is not an ELF file - exit using code 98.
  */
 void check_elf(unsigned char *e_ident)
 {

@@ -1,34 +1,34 @@
 #include "main.h"
 
 /**
- * append_text_to_file - Appends the file text at the end.
- * @filename: A pointer of the file name.
- * @text_content: The string to be added at the end of the file.
- * Return: 1 on success and -1 on failure.
- *         If filename is NULL return -1.
- *         If the file does not exist the user lacks write permissions - -1.
- *         Otherwise - 1.
+ * append_text_to_file - Used to append the file text.
+ * @filename: Points to the file name.
+ * @text_content: The string to be added end of the file.
+ * Return: 1 if successful and -1 if fails.
+ *         If NULL return -1.
+ *         If the user lacks write permissions - -1.
+ *         Else - 1.
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int p, q, length = 0;
+	int j, k, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 
 	if (text_content != NULL)
 	{
-		for (length = 0; text_content[length];)
-			length++;
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
-	p = open(filename, O_WRONLY | O_APPEND);
-	q = write(p, text_content, length);
+	j = open(filename, O_WRONLY | O_APPEND);
+	k = write(j, text_content, len);
 
-	if (p == -1 || q == -1)
+	if (j == -1 || k == -1)
 		return (-1);
 
-	close(p);
+	close(j);
 
 	return (1);
 }

@@ -3,7 +3,7 @@
 
 /**
  * read_textfile- A text file that was read and will print to STDOUT.
- * @filename: text file being read
+ * @filename: text file to be read
  * @letters: letters to be read
  * Return: z- number of bytes read and printed
  *        0 when function fails.

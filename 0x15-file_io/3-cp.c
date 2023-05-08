@@ -1,14 +1,14 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-char *create_buffer(char *file);
 void close_file(int fd);
+char *create_buffer(char *file);
 
 /**
  * create_buffer - A buffer is allocated 1024 bytes.
  * @file: The name of the file buffer.
- * Return: A pointer to the newl buffer.
+ * Return: A pointer to the new buffer.
  */
 char *create_buffer(char *file)
 {
@@ -27,8 +27,8 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file - Closes file descriptors.
- * @fd: The file descriptor to be closed.
+ * close_file - used to close file descriptors.
+ * @fd: The actual file descriptor.
  */
 void close_file(int fd)
 {
@@ -44,15 +44,15 @@ void close_file(int fd)
 }
 
 /**
- * main - Copies the contents of a file to another file.
+ * main - Copies the contents of a file.
  * @argc: The number of arguments.
  * @argv: An array of pointers.
  * Return: 0 on success.
  *
- * Description: If the argument count is incorrect - exit code 97.
- *              If you not exist or cannot read file_from - exit code 98.
- *              If you cannot create or write to file_to - exit code 99.
- *              If you cannot close not file_from and file_to - exit code 100.
+ * Description: The argument count is not correct - exit using code 97.
+ *              You not exist or cannot read file_from - exit using code 98.
+ *              You cannot create or write to file_to - exit using code 99.
+ *              You cannot close file_from and file_to - exit using code 100.
  */
 int main(int argc, char *argv[])
 {
