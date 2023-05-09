@@ -1,6 +1,11 @@
 #ifndef ELF_H
 #define ELF_H
 
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
+
 void print_magic(unsigned char *e_ident);
 void print_osabi(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
