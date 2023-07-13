@@ -4,9 +4,8 @@
 #include "../hash_tables.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always EXIT_SUCCESS.
+ * main - tests the code for Holberton School students.
+  * Return: Always return EXIT_SUCCESS.
  */
 int main(void)
 {
