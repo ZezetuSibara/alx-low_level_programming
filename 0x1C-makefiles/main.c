@@ -1,9 +1,8 @@
 #include "message.h"
 
 /**
- * main - Entry point
- *
- * Return: Always
+ * main - Te starting point
+ * Return: Success Always
  */
 
 int main(void)

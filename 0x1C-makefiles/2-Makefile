@@ -1,4 +1,4 @@
-# This file automates the compilation of a C program
+# This file is used to automate the compilation of a C program
 
 CC = gcc
 SRC = main.c school.c

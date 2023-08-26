@@ -5,9 +5,5 @@ all:
 	$(CC) $(SRC) -o school
 
 # OR
-# all: $(SRC)
-#	$(CC) $(SRC) -o school
-
-# OR
 # all: $(SRC) message.h
 #       $(CC) $(SRC) -o school

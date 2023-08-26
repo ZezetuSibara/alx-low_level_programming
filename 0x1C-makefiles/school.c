@@ -1,10 +1,8 @@
 #include "message.h"
 
 /**
- * print_school - print the logo of school
- *
- * Return: Nothing
- *
+ * print_school - the logo of school is printed
+ * Return: Null
  * Learn more: https://www.holbertonschool.com
  */
 

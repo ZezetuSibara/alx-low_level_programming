@@ -1,13 +1,13 @@
 
 #!/usr/bin/python3
 
-""" Function to find perimiter of an island """
+""" Function to find the island perimeter """
 
 
 def island_perimeter(grid):
     """
-    Input: List of Lists
-    Returns: Perimeter of the island
+    Input: The actual Lists
+    Returns: The island perimeter is returned
     """
     count = 0
     row = len(grid)
